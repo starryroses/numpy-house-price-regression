@@ -32,8 +32,17 @@ def compute_iqr_bounds(X, k=1.5):
         upper.append(up)
     return (lower,upper)
 
-# Step 3 - clip_columns (not yet solved)
-# TODO: implement
+# Step 3 - clip_columns
+def clip_columns(X, lower, upper):
+    X_copy = X.copy()
+    rows,cols = X.shape
+    for i in range(rows):
+        for j in range(cols):
+            if X_copy[i][j] > upper[j]:
+                X_copy[i][j] = upper[j]
+            elif X_copy[i][j] < lower[j]:
+                X_copy[i][j] = lower[j]
+    return X_copy
 
 # Step 4 - make_ratio_feature (not yet solved)
 # TODO: implement
