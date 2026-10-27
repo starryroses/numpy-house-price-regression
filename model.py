@@ -51,8 +51,13 @@ def make_ratio_feature(numerator, denominator, eps=1e-8):
         ratio[i] = (numerator[i]/(denominator[i]+eps))
     return ratio
 
-# Step 5 - append_column (not yet solved)
-# TODO: implement
+# Step 5 - append_column
+def append_column(X, col):
+    X = np.asarray(X)
+    col = np.asarray(col)
+    col = col.reshape(-1,1)
+    appended_col = np.concatenate([X, col], axis=1)
+    return appended_col
 
 # Step 6 - one_hot_encode (not yet solved)
 # TODO: implement
