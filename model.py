@@ -123,11 +123,13 @@ def ols_fit(X, y):
     ols_weights = np.linalg.solve(A,B)
     return ols_weights
 
-# Step 14 - ols_predict (not yet solved)
-# TODO: implement
+# Step 14 - ols_predict
+def ols_predict(X, theta):
+    return X@theta
 
-# Step 15 - mean_absolute_error (not yet solved)
-# TODO: implement
+# Step 15 - mean_absolute_error
+def mean_absolute_error(y_true, y_pred):
+    return float(np.mean(abs(y_true-y_pred)))
 
 # Step 16 - root_mean_squared_error (not yet solved)
 # TODO: implement
