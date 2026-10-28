@@ -26,8 +26,8 @@ python scaffold.py
 - [x] **14.** ols_predict
 - [x] **15.** mean_absolute_error
 - [x] **16.** root_mean_squared_error
-- [ ] **17.** r_squared
-- [ ] **18.** residual_summary
+- [x] **17.** r_squared
+- [x] **18.** residual_summary
 - [ ] **19.** prepare_cleaned_features
 - [ ] **20.** assemble_feature_matrix
 - [ ] **21.** make_train_val_test

@@ -135,11 +135,22 @@ def mean_absolute_error(y_true, y_pred):
 def root_mean_squared_error(y_true, y_pred):
     return float(np.sqrt(np.mean(pow(y_true-y_pred,2))))
 
-# Step 17 - r_squared (not yet solved)
-# TODO: implement
+# Step 17 - r_squared
+def r_squared(y_true, y_pred):
+    ss_res = np.sum(pow(y_true-y_pred,2))
+    ymean = np.mean(y_true)
+    ss_tot = np.sum(pow(y_true-ymean,2))
+    return float(1.0-(ss_res/ss_tot)) if ss_tot!=0 else 0.0
 
-# Step 18 - residual_summary (not yet solved)
-# TODO: implement
+# Step 18 - residual_summary
+def residual_summary(y_true, y_pred):
+    r = y_true-y_pred
+    res = {
+        'mean': np.mean(r),
+        'std': np.std(r),
+        'median_abs':np.median(np.abs(r))
+    }
+    return res
 
 # Step 19 - prepare_cleaned_features (not yet solved)
 # TODO: implement
