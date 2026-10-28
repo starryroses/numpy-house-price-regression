@@ -152,8 +152,12 @@ def residual_summary(y_true, y_pred):
     }
     return res
 
-# Step 19 - prepare_cleaned_features (not yet solved)
-# TODO: implement
+# Step 19 - prepare_cleaned_features
+def prepare_cleaned_features(X, iqr_k=1.5):
+    X = impute_nan_with_mean(X)
+    lower,upper = compute_iqr_bounds(X,iqr_k)
+    X = clip_columns(X,lower,upper)
+    return X
 
 # Step 20 - assemble_feature_matrix (not yet solved)
 # TODO: implement
