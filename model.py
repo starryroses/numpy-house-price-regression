@@ -83,8 +83,11 @@ def fit_standardizer(X):
 
     return np.array(means), np.array(stds)
 
-# Step 8 - apply_standardizer (not yet solved)
-# TODO: implement
+# Step 8 - apply_standardizer
+def apply_standardizer(X, mean, std):
+    X_copy = X.copy()
+    X_copy = (X_copy-mean)/std
+    return X_copy
 
 # Step 9 - add_bias_column (not yet solved)
 # TODO: implement
