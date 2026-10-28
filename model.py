@@ -59,11 +59,29 @@ def append_column(X, col):
     appended_col = np.concatenate([X, col], axis=1)
     return appended_col
 
-# Step 6 - one_hot_encode (not yet solved)
-# TODO: implement
+# Step 6 - one_hot_encode
+import numpy as np
 
-# Step 7 - fit_standardizer (not yet solved)
-# TODO: implement
+def one_hot_encode(labels):
+    unique = np.unique(labels)
+    result = np.zeros((len(labels), len(unique)))
+
+    for i, label in enumerate(labels):
+        result[i, np.where(unique == label)[0][0]] = 1.0
+
+    return result
+
+# Step 7 - fit_standardizer
+def fit_standardizer(X):
+    X = np.array(X)
+    num_cols = X.shape[1]
+    means = []
+    stds = []
+    for j in range(num_cols):
+        means.append(np.mean(X[:,j]))
+        stds.append(np.std(X[:,j]) if np.std(X[:,j])>0 else 1.0)
+
+    return np.array(means), np.array(stds)
 
 # Step 8 - apply_standardizer (not yet solved)
 # TODO: implement
